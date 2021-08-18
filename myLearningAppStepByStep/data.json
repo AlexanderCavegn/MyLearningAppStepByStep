@@ -1,0 +1,46 @@
+[
+    {
+        "id": 0,
+        "category": "Swift",
+        "content": {
+            "id": 0,
+            "description": "The Swift programming language.",
+            "lessons": [
+                {
+                    "id": 0,
+                    "title": "Constants and Variables"
+                },
+                {
+                    "id": 1,
+                    "title": "Numbers"
+                },
+                {
+                    "id": 2,
+                    "title": "Booleans"
+                }
+            ]
+        }
+    },
+    {
+        "id": 1,
+        "category": "SwiftUI",
+        "content": {
+            "id": 0,
+            "description": "UI programming with SwiftUI.",
+            "lessons": [
+                {
+                    "id": 0,
+                    "title": "Dataflow"
+                },
+                {
+                    "id": 1,
+                    "title": "MVVM"
+                },
+                {
+                    "id": 2,
+                    "title": "other"
+                }
+            ]
+        }
+    }
+]
