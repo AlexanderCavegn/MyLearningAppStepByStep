@@ -11,6 +11,8 @@ import Foundation
 class ContentModel: ObservableObject {
 
     @Published var modules = [Module]()
+    @Published var currentModule:Module?
+    var currentModuleIndex = 0
 
     init() {
         getLocalData()
@@ -28,5 +30,16 @@ class ContentModel: ObservableObject {
         catch {
             print("Couldn't parse local data")
         }
+    }
+
+    func beginModule (_ moduleid: Int) {
+    	for index in 0..<modules.count {
+            if modules[index].id == moduleid {	// Found the matching module
+                currentModuleIndex = index
+                break	// der Loop wird beendet
+            }
+
+    	}
+        currentModule = modules[currentModuleIndex] // wenn der Loop beendet ist, kennen wir das richtige Module
     }
 }

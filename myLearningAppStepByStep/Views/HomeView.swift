@@ -21,7 +21,20 @@ struct HomeView: View {
 
                     ForEach(model.modules) { module in
 
-                        HomeViewRow(title: module.category, description: module.content.description)
+                        NavigationLink (
+                            destination:
+                                ListView()
+                                .onAppear(perform: {
+                                    model.beginModule(module.id)
+                                }),
+
+                            label: {
+
+                                HomeViewRow(title: module.category, description: module.content.description)
+
+                            })
+
+
 
                     }
             }
