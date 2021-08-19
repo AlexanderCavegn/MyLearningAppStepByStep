@@ -12,6 +12,7 @@ class ContentModel: ObservableObject {
 
     @Published var modules = [Module]()
     @Published var currentModule:Module?
+
     var currentModuleIndex = 0
 
     init() {
@@ -20,7 +21,9 @@ class ContentModel: ObservableObject {
 
 
     func getLocalData(){
+
         let jsonUrl = Bundle.main.url(forResource: "data", withExtension: "json")
+
         do {
             let jsonData = try Data(contentsOf: jsonUrl!)
             let jsonDecoder = JSONDecoder()
@@ -36,9 +39,9 @@ class ContentModel: ObservableObject {
 
     	for index in 0..<modules.count {
             
-            if modules[index].id == moduleid {	// Found the matching module
+            if modules[index].id == moduleid {		// Found the matching module
                 currentModuleIndex = index
-                break	// der Loop wird beendet
+                break								// der Loop wird beendet
             }
 
     	}

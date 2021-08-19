@@ -18,23 +18,17 @@ struct HomeViewRow: View {
 
             Rectangle()
                 .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                .aspectRatio(CGSize(width: 335, height: 175), contentMode: .fit)
+                .frame(width: 350,
+                       height: 125,
+                       alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .cornerRadius(13.0)
 
-            HStack {
+            VStack {
+                Image(systemName: "text.book.closed")
+                Text(title)
+                    .font(.largeTitle)
 
-
-                Text("Image")
-                VStack {
-                    Text(title)
-
-                    Text(description)
-
-                    HStack {
-                        Image(systemName: "text.book.closed")
-                    }
-                }
-
-                
+                Text(description)
             }
             .foregroundColor(.white)
         }
@@ -43,6 +37,7 @@ struct HomeViewRow: View {
 
 struct HomeViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        HomeViewRow(title: "some title", description: "some description")
+        HomeViewRow(title: "some title",
+                    description: "some description")
     }
 }

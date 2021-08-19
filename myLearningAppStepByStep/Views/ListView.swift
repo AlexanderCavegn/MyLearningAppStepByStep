@@ -7,46 +7,11 @@
 
 import SwiftUI
 
-//struct ListView: View {
-//
-//    @EnvironmentObject var model: ContentModel
-//    // var index: Int
-//
-//    var body: some View {
-//
-//
-//        ScrollView {
-//            LazyVStack {
-//
-//                if model.currentModule != nil {
-//                    ForEach(0..<model.currentModule!.content.lessons.count) { index in
-//                        // ListViewRow(index: index)
-//                        Text(model.currentModule!.content.lessons[index].title)
-//
-//
-//
-//
-//
-//                    }
-//                }
-//
-//            }
-//            .navigationTitle(model.currentModule?.category ?? "")
-//
-//        }
-//    }
-//
-//
-//}
-
 struct ListView: View {
 
     @EnvironmentObject var model: ContentModel
 
-
     var body: some View {
-
-
 
         ScrollView {
             LazyVStack {
@@ -55,11 +20,7 @@ struct ListView: View {
                     
                     ForEach(0..<model.currentModule!.content.lessons.count) { index in
                         ListViewRow(index: index)
-
-
-
-
-                    }
+                   }
                 }
 
             }
@@ -67,6 +28,12 @@ struct ListView: View {
 
         }
     }
+}
 
+struct ListView_Previews: PreviewProvider {
+    static var previews: some View {
 
+        ListView()
+            .environmentObject(ContentModel())
+    }
 }
