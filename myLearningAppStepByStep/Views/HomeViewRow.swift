@@ -13,15 +13,27 @@ struct HomeViewRow: View {
     var description: String
 
     var body: some View {
+
         ZStack {
+
             Rectangle()
                 .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                 .aspectRatio(CGSize(width: 335, height: 175), contentMode: .fit)
 
-            VStack {
-                Text(title)
+            HStack {
 
-                Text(description)
+
+                Text("Image")
+                VStack {
+                    Text(title)
+
+                    Text(description)
+
+                    HStack {
+                        Image(systemName: "text.book.closed")
+                    }
+                }
+
                 
             }
             .foregroundColor(.white)

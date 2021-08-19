@@ -33,7 +33,9 @@ class ContentModel: ObservableObject {
     }
 
     func beginModule (_ moduleid: Int) {
+
     	for index in 0..<modules.count {
+            
             if modules[index].id == moduleid {	// Found the matching module
                 currentModuleIndex = index
                 break	// der Loop wird beendet

@@ -16,14 +16,23 @@ struct ListViewRow: View {
         let lesson = model.currentModule!.content.lessons[index]
 
         // Lesson card
+
+
         ZStack {
 
             Rectangle()
                 .foregroundColor(.blue)
                 .frame(height: 66)
+            HStack{
+                Text(String(index + 1))
+                VStack {
+                    Text(lesson.title)
+                        .foregroundColor(.white)
+                }
 
-            Text(lesson.title)
-                .foregroundColor(.white)
+            }
+
+
         }
 
     }
